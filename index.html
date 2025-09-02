@@ -8,7 +8,7 @@
 
   <body>
     <div class="wrapper">
-      <!-- <load src="./src/components/header/index.html" /> -->
+      <load src="./src/components/header/index.html" />
       <main class="main">
         <section class="hero">
           <div class="container hero__container">
@@ -127,29 +127,38 @@
         <section class="form">
           <div class="container">
             <div class="form__content">
-              <div class="form__img">
-                <img src="./src/images/form-img.png" alt="form image" />
+              <div class="form__side">
+                <div class="form__logo-bg">
+                  <img src="./src/images/formImage.png" alt="Suntegra logo" class="form__logo" />
+                </div>
               </div>
-              <div class="form">
-                <div class="form__row">
-                  <input type="text" name="name" class="form__input" placeholder="Ваше імʼя" />
-                  <input type="tel" name="phone" class="form__input form__input--phone" placeholder="Телефон" />
-                  <input type="hidden" id="country_code" />
-                </div>
-                <div class="form__row">
-                  <input type="checkbox" id="policy-checkbox" class="form__policy-checkbox" />
-                <label for="policy-checkbox" class="form__policy">
-                  <span class="form__policy-icon"></span>
-                  <span class="form__policy-text">Дані не будуть передаватися 3-м особам</span>
-                </label>
-                </div>
-                <div class="form__btn-wrapper">
-                  <input class="btn btn--yellow form__submit" type="submit" value="Залишити заявку">
-                </div>
+              <div class="form__main">
+                <h2 class="form__title">
+                  <strong>Залиште заявку,</strong><br />
+                  щоб отримати <strong><br />безкоштовну консультацію,</strong> або
+                  <strong>замовити виїзд спеціаліста</strong><br />
+                  для обстеження Вашого об’єкта
+                </h2>
+                <form class="form__fields" action="#" method="post">
+                  <div class="form__row">
+                    <input type="text" name="name" class="form__input" placeholder="Ваше імʼя" />
+                    <input type="tel" name="phone" class="form__input form__input--phone" placeholder="Телефон" />
+                    <input type="hidden" id="country_code" />
+                  </div>
+                  <div class="form__row form__row--policy">
+                    <input type="checkbox" id="policy-checkbox_2" class="form__policy-checkbox" />
+                    <label for="policy-checkbox_2" class="form__policy">
+                      <span class="form__policy-icon"></span>
+                      <span class="form__policy-text">Дані не будуть передаватися 3-м особам</span>
+                    </label>
+                  </div>
+                  <div class="form__btn-wrapper">
+                    <input class="btn btn--yellow form__submit" type="submit" value="Залишити заявку" />
+                  </div>
+                </form>
               </div>
             </div>
           </div>
-
         </section>
 
         <section class="benefits">
@@ -637,7 +646,7 @@
 
               <div class="terms__form">
                 <div class="terms__brand">
-                  <img src="./src/images/Suntegra_logo.png" alt="logo">
+                  <img src="./src/images/Suntegra_logo.png" alt="logo" />
                 </div>
                 <h5 class="terms__form-title">Звʼязатися:</h5>
                 <form class="form" action="#" method="post">
@@ -648,13 +657,13 @@
                   </div>
                   <div class="form__row">
                     <input type="checkbox" id="policy-checkbox" class="form__policy-checkbox" />
-                  <label for="policy-checkbox" class="form__policy">
-                    <span class="form__policy-icon"></span>
-                    <span class="form__policy-text">Дані не будуть передаватися 3-м особам</span>
-                  </label>
+                    <label for="policy-checkbox" class="form__policy">
+                      <span class="form__policy-icon"></span>
+                      <span class="form__policy-text">Дані не будуть передаватися 3-м особам</span>
+                    </label>
                   </div>
                   <div class="form__btn-wrapper">
-                    <input class="btn btn--yellow form__submit" type="submit" value="Залишити заявку">
+                    <input class="btn btn--yellow form__submit" type="submit" value="Залишити заявку" />
                   </div>
                 </form>
               </div>
@@ -744,7 +753,7 @@
           </div>
         </section>
       </main>
-      <!-- <load src="./src/components/footer.html" /> -->
+      <load src="./src/components/footer.html" />
     </div>
     <script type="module" src="./src/js/main.js"></script>
   </body>
