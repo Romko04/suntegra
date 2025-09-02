@@ -761,6 +761,7 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   gap: 1rem;
   border-radius: 5rem; /* 50px */
 }
@@ -1176,6 +1177,15 @@ img {
   border-radius: 2rem;
   background: #ffda03;
 }
+.benefit__icon img {
+  width: auto;
+  height: 6rem;
+  object-fit: cover;
+}
+.benefit__icon svg {
+  width: 7rem;
+  height: 7rem;
+}
 .benefit__text {
   font: 500 3rem var(--font-family);
   color: #4a4b4c;
@@ -1446,19 +1456,31 @@ section:not(.hero) {
   background: #038fe1;
   border-radius: 4rem; /* 40px */
   padding: 7.2rem 4rem; /* 72px 40px */
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
 }
 .terms__brand {
-  width: 26.6rem; /* 266px */
-  height: 11.471rem; /* 114.71px */
+  width: 100%; /* 266px */
   background: #fff; /* placeholder for logo */
+  padding: 2.8rem;
   border-radius: 5.67rem; /* 56.7px approx */
+  display: flex;
+  margin-bottom: ;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+.terms__brand img {
+  width: 26.6rem;
+height: 11.4rem;
+}
+
+.form__row {
+  margin-bottom: 1.6rem;
+
 }
 .terms__form-title {
   font-family: var(--font-family);
   font-weight: 400;
+  margin: 0 0 6rem;
   font-size: 5.6rem; /* 56px */
   letter-spacing: -0.06em;
   color: #fff;
@@ -1471,29 +1493,50 @@ section:not(.hero) {
 .form__input {
   width: 100%;
   background: transparent;
-  border: 0.1rem solid #fff;
+  border: 0.1rem solid #808c93;
   border-radius: 5rem; /* 50px */
-  color: #fff;
+  color: #4a4b4c;
+
   padding: 3rem 4rem; /* 30px 40px */
   font: 600 2.4rem var(--font-family);
 }
+
 .form__input::placeholder {
+  opacity: 0.9;
+  color: #4a4b4c;
+
+}
+
+
+.terms__form .form__input::placeholder {
   color: #fff;
   opacity: 0.9;
 }
+.terms__form .form__input{
+  color: #fff;
+  border: 0.1rem solid #fff;
+
+}
 .form__policy {
-  display: inline-grid;
+  display: inline-flex;
   grid-auto-flow: column;
   align-items: center;
+  margin-bottom: 1rem;
   gap: 1.4rem; /* 14px */
 }
 .form__policy-icon {
   width: 4rem;
   height: 4rem;
   border-radius: 1rem; /* 10px */
-  background: #fff;
+  background: #038fe1;
   position: relative;
+  cursor: pointer;
 }
+
+.terms__form .form__policy-icon {
+  background: #fff;
+}
+
 .form__policy-icon::after {
   content: "";
   position: absolute;
@@ -1501,18 +1544,43 @@ section:not(.hero) {
   margin: auto;
   width: 2.388rem;
   height: 1.552rem; /* 23.88 x 15.52 */
-  border: 0.318rem solid #038fe1;
+  border: 0.318rem solid #fff;
   border-top: none;
   border-right: none;
-  transform: rotate(-45deg) translate(-10%, 0%);
+
+  transform: rotate(-45deg);
+}
+
+.terms__form .form__policy-icon::after {
+  border: 0.318rem solid #038fe1;
 }
 .form__policy-text {
-  color: #fff;
+  color: #4a4b4c;
   font: 400 2.2rem "NunitoSans", var(--font-family);
+}
+.terms__form .form__policy-text {
+  color: #fff;
 }
 .form__submit {
   align-self: stretch;
+  width: 100%;
+  border: none;
 }
+
+.form__policy-checkbox {
+  display: none; /* Приховуємо чекбокс */
+}
+
+.form__policy-icon::after {
+  opacity: 0; /* Іконка прихована за замовчуванням */
+  transition: opacity 0.1s ease; /* Анімація для плавного переходу */
+}
+
+.form__policy-checkbox:checked + .form__policy .form__policy-icon::after {
+  opacity: 1; /* Іконка з'являється, якщо чекбокс обраний */
+}
+
+
 
 @media (max-width: 991.98px) {
   .terms__body {
