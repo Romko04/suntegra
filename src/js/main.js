@@ -2,22 +2,15 @@ import "../css/style.css";
 import Swiper from "swiper";
 import "swiper/css";
 
+import "../components/quis/quis.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   class App {
     constructor() {
       this.header = document.querySelector(".header");
-      this.workSection = document.querySelector(".work");
-      this.steps = document.querySelector(".steps");
-      this.logo = document.querySelector(".logo-element");
-      this.achievementNumbers = document.querySelectorAll(".achievements__number");
-      this.portfolioContent = document.querySelector(".portfolio__content");
-      this.reviewsContent = document.querySelector(".reviews__content");
-      this.body = document.querySelector("body");
 
       this.initSwiper();
       this.initListeners();
-      this.initObservers();
-      this.initPhoneMask();
     }
 
     initSwiper() {
@@ -86,33 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    createObserver(target, callback, threshold = 0.5) {
-      if (!target) return;
-
-      const observer = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              callback(entry.target);
-              observer.unobserve(entry.target); // Спостерігаємо тільки один раз
-            }
-          });
-        },
-        { threshold }
-      );
-
-      observer.observe(target);
-    }
-    initObservers() {
-      // Спостерігач для блоку з кроками
-      this.createObserver(this.workSection, () => this.activateSteps(), 0.4);
-
-      // Спостерігач для логотипу
-      this.createObserver(this.logo, (el) => el.classList.add("in-view"), 0.5);
-
-      this.createObserver(document.querySelector(".achievements__info"), () => this.animateNumbers(), 0.15);
-    }
-
     anchorHandler(e) {
       try {
         const menu = document.querySelector("header .menu__body");
@@ -148,75 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    initPhoneMask() {
-      try {
-        let input = document.querySelector(".form__input--phone");
-        let codeInput = document.querySelector("#country_code");
-
-        if (!input) return;
-
-        // Ініціалізація intl-tel-input
-        let iti = window.intlTelInput(input, {
-          initialCountry: "ua",
-          separateDialCode: true,
-          placeholderNumberType: "none",
-          placeholder: "",
-        });
-
-        let mask;
-
-        function updateMask() {
-          let itiUtils = window.intlTelInput.utils; // Отримуємо утиліти
-
-          let countryData = iti.getSelectedCountryData();
-          if (!countryData) return;
-
-          // Отримуємо приклад номера для країни
-          let exampleNumber = itiUtils.getExampleNumber(countryData.iso2, false, itiUtils.numberFormat.INTERNATIONAL);
-
-          let numberWithoutDialCode = exampleNumber.replace(new RegExp(`^\\+${countryData.dialCode}\\s*`), "");
-
-          // Створюємо маску для IMask
-          let maskPattern = numberWithoutDialCode
-            .replace(/\s+/g, "-") // Заміняємо пробіли на дефіси
-            .replace(/\d/g, "0");
-
-          if (mask) mask.destroy(); // Видаляємо стару маску
-          mask = window.IMask(input, {
-            mask: maskPattern,
-            lazy: false,
-          }); // Створюємо нову маску
-          codeInput.value = countryData.dialCode;
-        }
-
-        // Оновлюємо маску при зміні країни
-        input.addEventListener("countrychange", updateMask);
-
-        // Викликаємо після ініціалізації
-        setTimeout(updateMask, 500);
-      } catch (error) {
-        console.error("Помилка в телефонній масці:", error);
-      }
-    }
-
-    animateNumbers() {
-      this.achievementNumbers.forEach((el) => {
-        let target = parseInt(el.getAttribute("data-target"));
-        let isYears = el.getAttribute("data-target").includes("15"); // Якщо це "років", додаємо текст
-        let step = Math.ceil(target / 100); // Крок анімації
-        let count = 0;
-
-        let interval = setInterval(() => {
-          count += step;
-          if (count >= target) {
-            count = target;
-            clearInterval(interval);
-          }
-          el.textContent = isYears ? `${count} років` : count + "+";
-        }, 30);
-      });
-    }
-
     initListeners() {
       try {
         window.addEventListener("click", (e) => {
@@ -237,13 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector(".header__burger").classList.toggle("active");
       document.querySelector("header .menu__body").classList.toggle("active");
       document.body.classList.toggle("body--lock");
-    }
-    activateSteps() {
-      try {
-        this.steps.classList.add("active");
-      } catch (error) {
-        console.log(error);
-      }
     }
   }
 

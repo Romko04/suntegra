@@ -1,0 +1,214 @@
+<div class="popup popup--quis" id="popup-quis">
+  <div class="popup__body">
+    <div class="popup__content">
+      <button class="popup__close" type="button" aria-label="Закрити">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M2.09375 25.9033L25.9071 2.09668M2.09375 2.09668L25.9071 25.9033"
+            stroke="#038FE1"
+            stroke-width="3.57143"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+      <form class="quis-form" action="#" method="post">
+        <h3 class="quis__title">
+          Дайте відповідь на 6 питань та отримайте розрахунок вартості станції на Вашому об’єкті: 
+        </h3>
+        <div class="quis__steps">
+          <!-- Крок 1 -->
+          <div class="quis__step quis__step--active" data-step="1">
+            <div
+              class="quis__question-wrapper"
+              style="display: flex; align-items: center; justify-content: space-between; gap: 1.5rem"
+            >
+              <div class="quis__question">Який об’єкт треба обладнати сонячною станцією?</div>
+              <div class="quis__step-counter">1/6</div>
+            </div>
+            <div class="quis__answers">
+              <label class="quis__answer">
+                <input type="radio" name="object_type" value="house" /> Приватний будинок
+              </label>
+              <label class="quis__answer">
+                <input type="radio" name="object_type" value="osbb" /> Багатоквартирний будинок (ОСББ)
+              </label>
+              <label class="quis__answer">
+                <input type="radio" name="object_type" value="business" /> Комерційний об’єкт
+              </label>
+              <label class="quis__answer"> <input type="radio" name="object_type" value="other" /> Інше </label>
+              <label class="quis__answer quis__answer--custom">
+                <input type="radio" name="object_type" value="custom" /> Свій варіант
+                <input
+                  type="text"
+                  name="object_type_custom"
+                  class="quis__input quis__input--custom"
+                  placeholder="Вкажіть свій варіант"
+                  style="display: none; margin-left: 1rem"
+                />
+              </label>
+            </div>
+            <div class="quis__nav">
+              <button type="button" class="quis__next btn btn--yellow">Далі</button>
+            </div>
+          </div>
+          <!-- Крок 2 -->
+          <div class="quis__step" data-step="2">
+            <div
+              class="quis__question-wrapper"
+              style="display: flex; align-items: center; justify-content: space-between; gap: 1.5rem"
+            >
+              <div class="quis__question">Скільки електроенергії (кВт / год) щомісячно споживає Ваш об’єкт?</div>
+              <div class="quis__step-counter">2/6</div>
+            </div>
+            <div class="quis__answers">
+              <label class="quis__answer"
+                ><input type="radio" name="power" value="100-500" />100 — 500  кВт / год</label
+              >
+              <label class="quis__answer"
+                ><input type="radio" name="power" value="500-1000" />500 — 1000  кВт / год</label
+              >
+              <label class="quis__answer"
+                ><input type="radio" name="power" value="1000-2500" />1000 — 2500  кВт / год</label
+              >
+              <label class="quis__answer"
+                ><input type="radio" name="power" value="2500-5000" />2500 — 5000  кВт / год</label
+              >
+              <label class="quis__answer"
+                ><input type="radio" name="power" value=">5000" />більше 5000  кВт / год</label
+              >
+            </div>
+            <div class="quis__nav">
+              <button type="button" class="quis__prev btn btn--outline">Назад</button>
+              <button type="button" class="quis__next btn btn--yellow">Далі</button>
+            </div>
+          </div>
+          <!-- Крок 3 -->
+          <div class="quis__step" data-step="3">
+            <div
+              class="quis__question-wrapper"
+              style="display: flex; align-items: center; justify-content: space-between; gap: 1.5rem"
+            >
+              <div class="quis__question">Чи потрібне застосування станції як джерела резервного живлення? </div>
+              <div class="quis__step-counter">3/6</div>
+            </div>
+            <div class="quis__answers">
+              <label class="quis__answer"> <input type="radio" name="sell_energy" value="yes" /> Так </label>
+              <label class="quis__answer"> <input type="radio" name="sell_energy" value="no" /> Ні </label>
+            </div>
+            <div class="quis__nav">
+              <button type="button" class="quis__prev btn btn--outline">Назад</button>
+              <button type="button" class="quis__next btn btn--yellow">Далі</button>
+            </div>
+          </div>
+          <!-- Крок 4 -->
+          <div class="quis__step" data-step="4">
+            <div
+              class="quis__question-wrapper"
+              style="display: flex; align-items: center; justify-content: space-between; gap: 1.5rem"
+            >
+              <div class="quis__question">Призначення Вашої майбутньої сонячної електростанції?</div>
+              <div class="quis__step-counter">4/6</div>
+            </div>
+            <div class="quis__answers">
+              <label class="quis__answer">
+                <input type="radio" name="station_purpose" value="Власне споживання" /> Власне споживання
+              </label>
+              <label class="quis__answer">
+                <input type="radio" name="station_purpose" value="Власне споживання + продаж надлишків е/енергії" />
+                Власне споживання + продаж надлишків е/енергії
+              </label>
+              <label class="quis__answer">
+                <input type="radio" name="station_purpose" value="Продаж е/енергії" /> Продаж е/енергії
+              </label>
+              <label class="quis__answer quis__answer--custom">
+                <input type="radio" name="station_purpose" value="custom" /> Свій варіант
+                <input
+                  type="text"
+                  name="station_purpose_custom"
+                  class="quis__input quis__input--custom"
+                  placeholder="Вкажіть свій варіант"
+                  style="display: none; margin-left: 1rem"
+                />
+              </label>
+            </div>
+            <div class="quis__nav">
+              <button type="button" class="quis__prev btn btn--outline">Назад</button>
+              <button type="button" class="quis__next btn btn--yellow">Далі</button>
+            </div>
+          </div>
+          <!-- Крок 5 -->
+          <div class="quis__step" data-step="5">
+            <div
+              class="quis__question-wrapper"
+              style="display: flex; align-items: center; justify-content: space-between; gap: 1.5rem"
+            >
+              <div class="quis__question">Бажане розташування сонячних панелей</div>
+              <div class="quis__step-counter">5/6</div>
+            </div>
+            <div class="quis__answers">
+              <label class="quis__answer"> <input type="radio" name="panel_location" value="Наземне" /> Наземне </label>
+              <label class="quis__answer">
+                <input type="radio" name="panel_location" value="Плаский дах" /> Плаский дах
+              </label>
+              <label class="quis__answer">
+                <input type="radio" name="panel_location" value="Похилий дах" /> Похилий дах
+              </label>
+              <label class="quis__answer">
+                <input type="radio" name="panel_location" value="Не знаю, порадьте, будь ласка" /> Не знаю, порадьте,
+                будь ласка
+              </label>
+              <label class="quis__answer quis__answer--custom">
+                <input type="radio" name="panel_location" value="custom" /> Свій варіант
+                <input
+                  type="text"
+                  name="panel_location_custom"
+                  class="quis__input quis__input--custom"
+                  placeholder="Вкажіть свій варіант"
+                  style="display: none; margin-left: 1rem"
+                />
+              </label>
+            </div>
+            <div class="quis__nav">
+              <button type="button" class="quis__prev btn btn--outline">Назад</button>
+              <button type="button" class="quis__next btn btn--yellow">Далі</button>
+            </div>
+          </div>
+          <!-- Крок 6 -->
+          <div class="quis__step" data-step="6">
+            <div
+              class="quis__question-wrapper"
+              style="display: flex; align-items: center; justify-content: space-between; gap: 1.5rem"
+            >
+              <div class="quis__question">Залиште свої контакти для розрахунку вартості</div>
+              <div class="quis__step-counter">6/6</div>
+            </div>
+            <div class="quis__answers">
+              <label class="quis__label"
+                >Ваше імʼя:
+                <input type="text" name="user_name" class="quis__input" placeholder="Імʼя" required />
+              </label>
+              <label class="quis__label"
+                >Телефон:
+                <input type="tel" name="user_phone" class="quis__input" placeholder="+38..." required />
+              </label>
+              <input type="checkbox" id="policy-checkbox_quis" class="form__policy-checkbox" />
+              <label for="policy-checkbox_quis" class="form__policy" style="margin-top: 1.2rem">
+                <span class="form__policy-icon"></span>
+                <span class="form__policy-text">Дані не будуть передаватися 3-м особам</span>
+              </label>
+            </div>
+            <div class="quis__nav">
+              <button type="button" class="quis__prev btn btn--outline">Назад</button>
+              <button type="submit" class="quis__submit btn btn--yellow">Отримати результат</button>
+            </div>
+          </div>
+        </div>
+        <!-- Екран подяки -->
+        <div class="quis__thanks">
+          <div class="quis__thanks-title">Дякуємо!</div>
+          <div class="quis__thanks-text">Ваша заявка прийнята. Наш менеджер звʼяжеться з вами найближчим часом.</div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

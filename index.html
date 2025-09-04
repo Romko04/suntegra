@@ -8,7 +8,7 @@
 
   <body>
     <div class="wrapper">
-      <!-- <load src="./src/components/header/index.html" /> -->
+      <load src="./src/components/header/index.html" />
       <main class="main">
         <section class="hero">
           <div class="container hero__container">
@@ -159,7 +159,6 @@
             </div>
           </div>
         </section>
-
 
         <section class="benefits">
           <div class="container benefits__container">
@@ -330,14 +329,13 @@
                 </div>
 
                 <div class="green-tarif__actions">
-                  <a href="#calc" class="btn btn--yellow">Прорахунок вартості</a>
+                  <button data-popup=".popup--quis" class="btn btn--yellow popup__btn">Прорахунок вартості</button>
                   <a href="tel:+380635432424" class="btn btn--outline btn--light">Телефонуйте: +38 063 543 24 24</a>
                 </div>
               </div>
             </div>
           </div>
         </section>
-
 
         <section class="services">
           <div class="container services__container">
@@ -421,16 +419,18 @@
             </div>
           </div>
         </section>
-<!-- 
+
         <section class="station">
           <div class="station__banner">
             <div class="container station__banner-inner">
               <div class="station__head">
-                <div class="station__title">Сонячна станція від «Сантегра» — це:</div>
+                <h2 class="title station__title">Сонячна станція від «Сантегра» — це:</h2>
                 <div class="station__subtitle">
-                  Індивідуально спроєктована, повністю укомплектована, налаштована сонячна електростанція, під’єднана до
-                  Вашої внутрішньої мережі, та / або під’єднана до зовнішньої електромережі для передачі (продажу)
-                  енергії державі.
+                  <p>
+                    Індивідуально спроєктована, повністю укомплектована, налаштована сонячна електростанція, під’єднана
+                    до Вашої внутрішньої мережі, та / або під’єднана до зовнішньої електромережі для передачі (продажу)
+                    енергії державі.
+                  </p>
                 </div>
               </div>
             </div>
@@ -591,13 +591,14 @@
                 </ul>
 
                 <div class="station__btn-wrapper">
-                  <a href="#calc" class="btn btn--blue station__cta">Прорахунок вартості</a>
+                  <button data-popup=".popup--quis" class="btn btn--blue station__cta popup__btn">
+                    Прорахунок вартості
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </section>
-
         <section class="terms">
           <div class="container terms__container">
             <h2 class="title terms__title">Як ми працюємо?</h2>
@@ -753,7 +754,8 @@
           </div>
         </section>
       </main>
-      <load src="./src/components/footer.html" /> -->
+      <load src="./src/components/quis/index.html" />
+      <load src="./src/components/footer.html" />
     </div>
     <script type="module" src="./src/js/main.js"></script>
   </body>

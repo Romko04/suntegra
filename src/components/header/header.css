@@ -1,19 +1,19 @@
 .header {
-  border-radius: 4rem;
+  border-radius: 0 0 4rem 4rem;
   background-color: #fff;
+  box-shadow: 0rem 0.4rem 1.2rem rgba(0, 0, 0, 0.2);
   padding: 1.4rem;
   position: fixed;
-  z-index: 2;
+  z-index: 4;
   width: 100%;
 }
-.container {
-}
+
 .header__container {
   display: flex;
   flex-direction: column;
   gap: 2.6rem;
 }
-.header__top {
+.header__top .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,14 +35,7 @@
   height: 100%;
   object-fit: cover;
 }
-.header__content {
-}
-.header__menu {
-}
-.header__menu-top {
-}
-.menu__body {
-}
+
 .header__menu-items {
   display: flex;
   align-items: center;
@@ -56,4 +49,193 @@
   font-size: 2.4rem;
   line-height: 100%;
   color: #808c93;
+}
+
+@media (max-width: 991.98px) {
+  .header__menu-items a {
+    font-family: var(--third-family);
+    font-weight: 400;
+    font-size: 3.4rem;
+    line-height: 87%;
+    letter-spacing: -0.06em;
+    color: #fff;
+  }
+  .menu__list a {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 2.7rem;
+    color: #fff;
+  }
+  .header__container {
+    padding: 0.8rem 1.6rem !important;
+  }
+  .swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+  .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    bottom: 0 !important;
+  }
+  .header__burger-wrapper {
+    padding: 1rem;
+    background-color: #275dff;
+    border-radius: 50%;
+    position: relative;
+    z-index: 26;
+    aspect-ratio: 1/1;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header__burger {
+    display: block;
+    position: relative;
+    width: 3rem;
+    height: 2rem;
+    cursor: pointer;
+    z-index: 5;
+    color: inherit;
+    background-color: inherit;
+    border: none;
+  }
+  .header__burger span,
+  .header__burger::after,
+  .header__burger::before {
+    content: "";
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 0.2rem;
+    background-color: #038fe1;
+    border-radius: 1rem;
+  }
+  .header__burger span {
+    top: calc(50% - 0.075rem);
+  }
+  .header__burger::before {
+    top: 0;
+  }
+  .header__burger::after {
+    bottom: 0;
+  }
+
+  .header__burger.active::before {
+    top: calc(50% - 0.075rem);
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .header__burger.active::after {
+    bottom: calc(50% - 0.075rem);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .header__burger.active span {
+    display: none;
+  }
+  .menu__list {
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    padding: 0;
+    gap: 2.6rem;
+  }
+  .menu__body {
+    left: -120%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #038fe1;
+    bottom: 0;
+    z-index: -1;
+    transition: left ease 0.3s;
+    overflow: auto;
+    z-index: 4;
+    flex-direction: column;
+    display: flex;
+    height: 100vh;
+  }
+  .menu__body.active {
+    left: 0;
+  }
+  .menu-item {
+    font-size: 1.6rem;
+    position: relative;
+    margin: 0;
+  }
+  .header__menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 17rem;
+    margin-bottom: 5rem;
+  }
+
+  .header__menu-items {
+    flex-wrap: wrap;
+    padding: 0 5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .header__link {
+    font-size: 2.6rem;
+    font-family: var(--second-family);
+  }
+
+  .header__logo span {
+    font-size: 1.9rem;
+  }
+
+  .header__logo img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .header__logo {
+    width: 3.5rem;
+    height: 2.2rem;
+    z-index: 26;
+  }
+
+  .lang-switcher a {
+    font-size: 1.6rem;
+  }
+
+  .header__logo {
+    width: 12rem;
+    height: 5.2rem;
+  }
+  .header {
+    border-radius: 0;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .header__top {
+    border-radius: 0 0 2rem 2rem;
+    padding: 1.4rem 2rem;
+    background-color: #fff;
+    position: relative;
+    z-index: 5;
+    box-shadow: 0rem 0.4rem 1.2rem rgba(0, 0, 0, 0.2);
+  }
+
+  .header__container {
+    gap: 0;
+  }
+  .header__burger ~ a {
+    display: none;
+  }
+}
+
+@media (min-width: 991.98px) {
+  .header__burger {
+    display: none;
+  }
 }
